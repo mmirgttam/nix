@@ -2,6 +2,11 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    envExtra = ''
+      if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+        . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+      fi
+    '';
     shellAliases = {
       bazel = "bazelisk";
       hms = "home-manager switch";
