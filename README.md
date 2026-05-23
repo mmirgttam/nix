@@ -26,3 +26,8 @@ git clone https://github.com/mmirgttam/nix.git ~/.config/home-manager
 ```sh
 nix run home-manager -- switch --flake ~/.config/home-manager#matt
 ```
+
+## References
+
+* [NixOS Packages](https://search.nixos.org/packages?channel=unstable)
+* [Home Manager Option Search](https://home-manager-options.extranix.com)
