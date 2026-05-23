@@ -7,6 +7,7 @@
     ./modules/direnv.nix
     ./modules/fzf.nix
     ./modules/git.nix
+    ./modules/lazygit.nix
     ./modules/starship.nix
     ./modules/wezterm.nix
     ./modules/zsh.nix
@@ -15,14 +16,19 @@
   home.packages = with pkgs; [
     bat
     bazelisk
+    bintools
     fd
     gh
     git
+    hexdump
     htop
-    lazygit
+    hyperfine
+    jq
     nerd-fonts.fira-code
-    python3
+    python315
     ripgrep
+    strace
+    valgrind
     yazi
   ];
 
