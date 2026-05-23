@@ -19,7 +19,6 @@
     bintools
     fd
     gh
-    git
     hexdump
     htop
     hyperfine
