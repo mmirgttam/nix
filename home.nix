@@ -10,6 +10,7 @@
     ./modules/lazygit.nix
     ./modules/starship.nix
     ./modules/wezterm.nix
+    ./modules/zoxide.nix
     ./modules/zsh.nix
   ];
 
@@ -17,16 +18,22 @@
     bat
     bazelisk
     bintools
+    btop
+    eza
     fd
     gh
     hexdump
+    hexyl
     htop
     hyperfine
     jq
+    lsof
     nerd-fonts.fira-code
+    procs
     python315
     ripgrep
     strace
+    tokei
     valgrind
     yazi
   ];

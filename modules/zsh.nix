@@ -9,8 +9,10 @@
     '';
     shellAliases = {
       bazel = "bazelisk";
+      cd = "zoxide";
       hms = "home-manager switch";
       lg = "lazygit";
+      ls = "eza";
       vi = "nvim";
       vim = "nvim";
     };
