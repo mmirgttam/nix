@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ nixgl, pkgs, ... }: {
   home.username = "matt";
   home.homeDirectory = "/home/matt";
   home.stateVersion = "26.05";
@@ -33,5 +33,6 @@
   ];
 
   targets.genericLinux.enable = true;
+  targets.genericLinux.nixGL.packages = nixgl.packages;
   programs.home-manager.enable = true;
 }
