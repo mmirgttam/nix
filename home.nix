@@ -5,6 +5,7 @@
 
   imports = [
     ./modules/direnv.nix
+    ./modules/eza.nix
     ./modules/fzf.nix
     ./modules/git.nix
     ./modules/lazygit.nix
@@ -19,7 +20,6 @@
     bazelisk
     bintools
     btop
-    eza
     fd
     gh
     hexdump
