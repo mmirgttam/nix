@@ -12,7 +12,7 @@ filekinds:
   socket: { foreground: "#626880" }
   special: { foreground: "#CA9EE6" }
   executable: { foreground: "#A6D189" }
-  mount_point: { foreground: "#85C1DC" }
+  mount_point: { foreground: "#85C1DC", is_underline: false }
 
 perms:
   user_read: { foreground: "#C6D0F5" }
@@ -87,7 +87,7 @@ file_type:
   compressed: { foreground: "#F4B8E4" }
   temp: { foreground: "#EA999C" }
   compiled: { foreground: "#85C1DC" }
-  build: { foreground: "#626880" }
+  build: { foreground: "#626880", is_underline: false }
   source: { foreground: "#8CAAEE" }
 
 punctuation: { foreground: "#838BA7" }
