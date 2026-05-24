@@ -5,12 +5,12 @@
 
   imports = [
     ./modules/direnv.nix
-    ./modules/eza.nix
+    ./modules/eza/eza.nix
     ./modules/fzf.nix
     ./modules/git.nix
     ./modules/lazygit.nix
     ./modules/starship.nix
-    ./modules/wezterm.nix
+    ./modules/wezterm/wezterm.nix
     ./modules/zoxide.nix
     ./modules/zsh.nix
   ];
