@@ -8,6 +8,8 @@
 
   home.packages = with pkgs; [
     bintools
+    heaptrack
+    hotspot
     strace
     valgrind
   ];
