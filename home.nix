@@ -1,6 +1,5 @@
-{ nixgl, pkgs, ... }: {
+{ pkgs, ... }: {
   home.username = "matt";
-  home.homeDirectory = "/home/matt";
   home.stateVersion = "26.05";
 
   imports = [
@@ -32,13 +31,9 @@
     procs
     python315
     ripgrep
-    strace
     tokei
-    valgrind
     yazi
   ];
 
-  targets.genericLinux.enable = true;
-  targets.genericLinux.nixGL.packages = nixgl.packages;
   programs.home-manager.enable = true;
 }

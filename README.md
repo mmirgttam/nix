@@ -23,8 +23,16 @@ git clone https://github.com/mmirgttam/nix.git ~/.config/home-manager
 
 ### Apply config
 
+On macOS:
+
 ```sh
-nix run home-manager -- switch --flake ~/.config/home-manager#matt
+nix run home-manager -- switch --flake ~/.config/home-manager#matt-aarch64-darwin
+```
+
+On Linux:
+
+```sh
+nix run home-manager -- switch --flake ~/.config/home-manager#matt-x86_64-linux
 ```
 
 ## References

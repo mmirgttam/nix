@@ -10,7 +10,6 @@
     shellAliases = {
       bazel = "bazelisk";
       cd = "zoxide";
-      hms = "home-manager switch";
       vi = "nvim";
       vim = "nvim";
     };

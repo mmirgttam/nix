@@ -13,13 +13,28 @@
 
   outputs = { nixpkgs, home-manager, nixgl, ... }:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      mkHome = { system, homeDirectory, modules ? [ ] }:
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          extraSpecialArgs = { inherit nixgl; };
+          modules = [
+            ./home.nix
+            { home.homeDirectory = homeDirectory; }
+          ] ++ modules;
+        };
     in {
-      homeConfigurations."matt" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = { inherit nixgl; };
-        modules = [ ./home.nix ];
+      homeConfigurations = {
+        "matt-aarch64-darwin" = mkHome {
+          system = "aarch64-darwin";
+          homeDirectory = "/Users/matt";
+          modules = [ ./systems/aarch64-darwin.nix ];
+        };
+
+        "matt-x86_64-linux" = mkHome {
+          system = "x86_64-linux";
+          homeDirectory = "/home/matt";
+          modules = [ ./systems/x86_64-linux.nix ];
+        };
       };
     };
 }
