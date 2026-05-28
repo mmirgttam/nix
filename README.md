@@ -47,3 +47,5 @@ nix run home-manager -- switch --flake ~/.config/home-manager#matt-x86_64-linux
 
 * [NixOS Packages](https://search.nixos.org/packages?channel=unstable)
 * [Home Manager Option Search](https://home-manager-options.extranix.com)
+* [Nixvim](https://github.com/nix-community/nixvim)
+* [Lix](https://lix.systems)
