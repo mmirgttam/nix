@@ -4,6 +4,14 @@
 
 ### Install Nix
 
+On macOS:
+
+```sh
+curl -sSf -L https://install.lix.systems/lix | sh -s -- install
+```
+
+On Linux:
+
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf -L https://nixos.org/nix/install | sh -s -- --daemon
 ```
