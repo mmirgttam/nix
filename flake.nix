@@ -9,15 +9,18 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixvim.url = "github:nix-community/nixvim";
   };
 
-  outputs = { nixpkgs, home-manager, nixgl, ... }:
+  outputs = { nixpkgs, home-manager, nixgl, nixvim, ... }:
     let
       mkHome = { system, homeDirectory, modules ? [ ] }:
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
           extraSpecialArgs = { inherit nixgl; };
           modules = [
+            nixvim.homeModules.nixvim
             ./home.nix
             { home.homeDirectory = homeDirectory; }
           ] ++ modules;

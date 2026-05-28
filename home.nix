@@ -8,6 +8,7 @@
     ./modules/fzf.nix
     ./modules/git.nix
     ./modules/lazygit.nix
+    ./modules/nixvim
     ./modules/starship.nix
     ./modules/wezterm
     ./modules/zoxide.nix
