@@ -9,7 +9,7 @@
     '';
     shellAliases = {
       bazel = "bazelisk";
-      cd = "zoxide";
+      cd = "z";
       vi = "nvim";
       vim = "nvim";
     };
