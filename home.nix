@@ -32,6 +32,7 @@
     python315
     ripgrep
     tokei
+    tree-sitter
     yazi
   ];
 
