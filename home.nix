@@ -9,6 +9,7 @@
     ./modules/git.nix
     ./modules/lazygit.nix
     ./modules/nixvim
+    ./modules/nodejs.nix
     ./modules/starship.nix
     ./modules/wezterm
     ./modules/zoxide.nix
@@ -22,6 +23,7 @@
     btop
     fd
     gh
+    git
     hexdump
     hexyl
     htop
