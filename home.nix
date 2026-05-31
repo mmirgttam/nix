@@ -21,6 +21,7 @@
     bazelisk
     bintools
     btop
+    cmake
     fd
     gh
     git
@@ -30,10 +31,14 @@
     hyperfine
     jq
     lsof
+    lua-language-server
     nerd-fonts.fira-code
+    ninja
     procs
-    python315
+    python314
+    python314Packages.python-lsp-server
     ripgrep
+    stylua
     tokei
     tree-sitter
     yazi
