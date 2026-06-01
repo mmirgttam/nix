@@ -28,6 +28,7 @@
               hint = "󰌵 ";
             };
           }
+          "lsp_status"
           "filetype"
           "location"
           "selectioncount"

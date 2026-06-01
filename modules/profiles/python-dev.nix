@@ -9,7 +9,7 @@
 
   programs.nixvim.plugins.lsp.servers.pylsp = {
     enable = true;
-    settings.pylsp.plugins = {
+    settings.plugins = {
       black.enabled = true;
       yapf.enabled = false;
       pycodestyle.enabled = false;
