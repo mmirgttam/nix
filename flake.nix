@@ -13,8 +13,22 @@
     nixvim.url = "github:nix-community/nixvim";
   };
 
-  outputs = { nixpkgs, home-manager, nixgl, nixvim, ... }:
+  outputs = { self, nixpkgs, home-manager, nixgl, nixvim, ... }:
     let
+      homeModules = {
+        profiles = {
+          base = ./modules/profiles/base.nix;
+          desktop = ./modules/profiles/desktop.nix;
+          base-dev = ./modules/profiles/base-dev.nix;
+          python-dev = ./modules/profiles/python-dev.nix;
+        };
+
+        platforms = {
+          aarch64-darwin = ./modules/platforms/aarch64-darwin.nix;
+          x86_64-linux = ./modules/platforms/x86_64-linux.nix;
+        };
+      };
+
       mkHome = { system, homeDirectory, modules ? [ ] }:
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
@@ -26,18 +40,41 @@
           ] ++ modules;
         };
     in {
+      lib.mkHome = mkHome;
+      inherit homeModules;
+
       homeConfigurations = {
         "matt-aarch64-darwin" = mkHome {
           system = "aarch64-darwin";
           homeDirectory = "/Users/matt";
-          modules = [ ./systems/aarch64-darwin.nix ];
+          modules = [
+            homeModules.platforms.aarch64-darwin
+            homeModules.profiles.base
+            homeModules.profiles.desktop
+            homeModules.profiles.base-dev
+            homeModules.profiles.python-dev
+          ];
         };
 
         "matt-x86_64-linux" = mkHome {
           system = "x86_64-linux";
           homeDirectory = "/home/matt";
-          modules = [ ./systems/x86_64-linux.nix ];
+          modules = [
+            homeModules.platforms.x86_64-linux
+            homeModules.profiles.base
+            homeModules.profiles.desktop
+            homeModules.profiles.base-dev
+            homeModules.profiles.python-dev
+          ];
         };
+      };
+
+      checks = {
+        aarch64-darwin."matt-aarch64-darwin" =
+          self.homeConfigurations."matt-aarch64-darwin".activationPackage;
+
+        x86_64-linux."matt-x86_64-linux" =
+          self.homeConfigurations."matt-x86_64-linux".activationPackage;
       };
     };
 }

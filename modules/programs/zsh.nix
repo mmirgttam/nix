@@ -1,4 +1,7 @@
-{ ... }: {
+{ config, lib, ... }:
+let
+  hm = config.matt.home-manager;
+in {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -8,14 +11,15 @@
       fi
     '';
     shellAliases = {
-      bazel = "bazelisk";
       cd = "z";
       vi = "nvim";
       vim = "nvim";
+    } // lib.optionalAttrs (hm.switchConfiguration != null) {
+      hms = "home-manager switch --flake ${hm.switchFlake}#${hm.switchConfiguration}";
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "bazel" "fzf" "git" ];
+      plugins = [ "fzf" "git" ];
     };
   };
 }

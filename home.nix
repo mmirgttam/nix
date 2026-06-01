@@ -1,49 +1,22 @@
-{ pkgs, ... }: {
-  home.username = "matt";
-  home.stateVersion = "26.05";
+{ lib, ... }: {
+  options.matt.home-manager = {
+    switchFlake = lib.mkOption {
+      type = lib.types.str;
+      default = "~/.config/home-manager";
+      description = "Flake path used by the hms alias.";
+    };
 
-  imports = [
-    ./modules/direnv.nix
-    ./modules/eza
-    ./modules/fzf.nix
-    ./modules/git.nix
-    ./modules/lazygit.nix
-    ./modules/nixvim
-    ./modules/nodejs.nix
-    ./modules/starship.nix
-    ./modules/wezterm
-    ./modules/zoxide.nix
-    ./modules/zsh.nix
-  ];
+    switchConfiguration = lib.mkOption {
+      type = lib.types.nullOr lib.types.str;
+      default = null;
+      description = "Home Manager configuration name used by the hms alias.";
+    };
+  };
 
-  home.packages = with pkgs; [
-    bat
-    bazelisk
-    bintools
-    btop
-    cmake
-    fd
-    gh
-    git
-    hexdump
-    hexyl
-    htop
-    hyperfine
-    jq
-    lsof
-    lua-language-server
-    nerd-fonts.fira-code
-    ninja
-    procs
-    python314
-    python314Packages.python-lsp-server
-    ripgrep
-    stylua
-    tokei
-    tree-sitter
-    yazi
-  ];
+  config = {
+    home.username = "matt";
+    home.stateVersion = "26.05";
 
-  programs.home-manager.enable = true;
-  programs.firefox.enable = true;
+    programs.home-manager.enable = true;
+  };
 }

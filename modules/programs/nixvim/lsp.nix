@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ ... }: {
   plugins.lsp = {
     enable = true;
 
@@ -45,16 +45,5 @@
         action.__raw = "vim.lsp.buf.format";
       }
     ];
-
-    servers = {
-      pylsp = {
-        enable = true;
-        settings.pylsp.plugins = {
-          black.enabled = true;
-          yapf.enabled = false;
-          pycodestyle.enabled = false;
-        };
-      };
-    };
   };
 }
