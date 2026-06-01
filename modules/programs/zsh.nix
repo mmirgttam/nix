@@ -12,6 +12,7 @@ in {
     '';
     shellAliases = {
       cd = "z";
+      ncdu = "ncdu --color dark";
       vi = "nvim";
       vim = "nvim";
     } // lib.optionalAttrs (hm.switchConfiguration != null) {
