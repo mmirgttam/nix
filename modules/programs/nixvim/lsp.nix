@@ -2,6 +2,8 @@
   plugins.lsp = {
     enable = true;
 
+    servers.nixd.enable = true;
+
     onAttach = ''
       vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
       vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
