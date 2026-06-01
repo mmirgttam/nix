@@ -16,6 +16,7 @@
       ./plugins/lualine.nix
       ./plugins/nerdcommenter.nix
       ./plugins/persistence.nix
+      ./plugins/render-markdown.nix
       ./plugins/snacks.nix
       ./plugins/treesitter.nix
       ./plugins/yazi.nix

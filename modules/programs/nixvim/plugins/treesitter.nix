@@ -6,11 +6,13 @@
         ensure_installed = [
           "c"
           "cpp"
-          "python"
           "lua"
+          "markdown"
+          "markdown_inline"
+          "python"
+          "query"
           "vim"
           "vimdoc"
-          "query"
         ];
         highlight.enable = true;
         indent.enable = true;
