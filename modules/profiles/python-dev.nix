@@ -11,8 +11,9 @@
     enable = true;
     settings.plugins = {
       black.enabled = true;
-      yapf.enabled = false;
       pycodestyle.enabled = false;
+      pyflakes.enabled = true;
+      yapf.enabled = false;
     };
   };
 }
