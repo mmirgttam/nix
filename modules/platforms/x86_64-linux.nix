@@ -5,8 +5,5 @@
   programs.firefox.package = config.lib.nixGL.wrap pkgs.firefox;
   programs.wezterm.package = config.lib.nixGL.wrap pkgs.wezterm;
 
-  matt.home-manager = {
-    switchFlake = lib.mkDefault "~/.config/home-manager";
-    switchConfiguration = lib.mkDefault "matt-x86_64-linux";
-  };
+  matt.home-manager.switchConfiguration = lib.mkDefault "matt-x86_64-linux";
 }

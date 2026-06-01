@@ -1,11 +1,5 @@
 { lib, ... }: {
   options.matt.home-manager = {
-    switchFlake = lib.mkOption {
-      type = lib.types.str;
-      default = "~/.config/home-manager";
-      description = "Flake path used by the hms alias.";
-    };
-
     switchConfiguration = lib.mkOption {
       type = lib.types.nullOr lib.types.str;
       default = null;

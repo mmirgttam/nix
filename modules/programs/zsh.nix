@@ -16,7 +16,7 @@ in {
       vi = "nvim";
       vim = "nvim";
     } // lib.optionalAttrs (hm.switchConfiguration != null) {
-      hms = "home-manager switch --flake ${hm.switchFlake}#${hm.switchConfiguration}";
+      hms = "home-manager switch --flake ~/.config/home-manager#${hm.switchConfiguration}";
     };
     oh-my-zsh = {
       enable = true;
