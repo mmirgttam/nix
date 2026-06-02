@@ -38,7 +38,19 @@ in {
     (n "<leader><tab>d" "<cmd>tabclose<cr>" "Close tab")
 
     # Terminal
-    (t "<C-[>" ''<C-\><C-n>'' "Exit terminal mode")
+    (t "<leader><esc>" ''<C-\><C-n>'' "Exit terminal mode")
+    (n "<leader>tt" (lua ''
+      function()
+        Snacks.terminal.toggle(nil, {
+          win = {
+            position = "float",
+            width = 0.75,
+            height = 0.75,
+            border = "rounded",
+          },
+        })
+      end
+    '') "Toggle floating terminal")
 
     # Hop
     (n "<leader>h" "<cmd>HopWord<cr>" "Hop to word")
