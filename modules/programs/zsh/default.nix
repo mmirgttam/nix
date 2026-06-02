@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, ... }:
 let
   hm = config.matt.home-manager;
 in {
@@ -20,7 +20,6 @@ in {
       ncdu = "ncdu --color dark";
       vi = "nvim";
       vim = "nvim";
-    } // lib.optionalAttrs (hm.switchConfiguration != null) {
       hms = "home-manager switch --flake ~/.config/home-manager#${hm.switchConfiguration}";
     };
   };

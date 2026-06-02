@@ -1,8 +1,7 @@
 { lib, ... }: {
   options.matt.home-manager = {
     switchConfiguration = lib.mkOption {
-      type = lib.types.nullOr lib.types.str;
-      default = null;
+      type = lib.types.str;
       description = "Home Manager configuration name used by the hms alias.";
     };
   };
