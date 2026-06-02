@@ -8,12 +8,13 @@
     ../programs/nixvim
     ../programs/starship.nix
     ../programs/zoxide.nix
-    ../programs/zsh.nix
+    ../programs/zsh
   ];
 
   home.packages = with pkgs; [
     bat
     btop
+    coreutils-prefixed
     fd
     hexdump
     hexyl
