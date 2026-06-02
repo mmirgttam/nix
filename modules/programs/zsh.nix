@@ -12,15 +12,12 @@ in {
     '';
     shellAliases = {
       cd = "z";
+      glol = "git log --graph --pretty=\"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset\"";
       ncdu = "ncdu --color dark";
       vi = "nvim";
       vim = "nvim";
     } // lib.optionalAttrs (hm.switchConfiguration != null) {
       hms = "home-manager switch --flake ~/.config/home-manager#${hm.switchConfiguration}";
-    };
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "fzf" "git" ];
     };
   };
 }
