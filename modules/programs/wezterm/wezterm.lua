@@ -21,7 +21,7 @@ config.keys = {
     key = "c",
     mods = "LEADER",
     action = act.SpawnCommandInNewTab({
-      args = { "nvim", wezterm.home_dir .. "/.config/home-manager/modules/wezterm.lua" },
+      args = { wezterm.home_dir .. "/.nix-profile/bin/nvim", wezterm.home_dir .. "/code/nix/modules/programs/wezterm/wezterm.lua" },
     }),
   },
 
@@ -79,7 +79,7 @@ config.keys = {
       action = wezterm.action_callback(function(window, pane)
         local url = window:get_selection_text_for_pane(pane)
         wezterm.log_info("opening: " .. url)
-        wezterm.open_with(url)
+        wezterm.background_child_process({ wezterm.home_dir .. "/.nix-profile/bin/firefox", "--new-tab", url })
       end),
     }),
   },
