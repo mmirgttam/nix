@@ -7,6 +7,7 @@
     bintools
     cmake
     gh
+    lefthook
     ninja
     tree-sitter
   ] ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux (with pkgs; [

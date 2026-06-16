@@ -15,6 +15,7 @@
     bat
     btop
     coreutils-prefixed
+    dig
     fd
     hexdump
     hexyl
