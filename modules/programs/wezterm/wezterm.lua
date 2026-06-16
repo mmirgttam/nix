@@ -3,7 +3,8 @@ local act = wezterm.action
 
 local config = wezterm.config_builder()
 
-config.font = wezterm.font("Fira Code Medium")
+config.font_dirs = { wezterm.home_dir .. "/.nix-profile/share/fonts" }
+config.font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Medium" })
 config.font_size = 14
 config.color_scheme = "Catppuccin Frappe"
 config.hide_tab_bar_if_only_one_tab = true
