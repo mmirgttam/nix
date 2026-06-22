@@ -7,6 +7,7 @@
     bintools
     cmake
     gh
+    glow
     lefthook
     ninja
     tree-sitter
