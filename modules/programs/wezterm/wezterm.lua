@@ -48,6 +48,10 @@ config.keys = {
   { key = "k", mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize({ "Up", 5 }) },
   { key = "l", mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize({ "Right", 5 }) },
 
+  -- Pane splitting
+  { key = "\\", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+  { key = "-", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+
   -- Tab movement
   { key = "[", mods = "LEADER", action = act.MoveTabRelative(-1) },
   { key = "]", mods = "LEADER", action = act.MoveTabRelative(1) },
