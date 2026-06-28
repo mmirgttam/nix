@@ -5,6 +5,7 @@ in {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    defaultKeymap = "emacs";
 
     initContent = builtins.readFile ./functions.zsh;
 
