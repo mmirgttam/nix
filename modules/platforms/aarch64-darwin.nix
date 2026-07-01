@@ -20,6 +20,16 @@ in {
   targets.darwin.defaults."com.apple.dock".autohide = true;
   targets.darwin.defaults."com.apple.menuextra.clock".Show24Hour = true;
 
+  # Disable default Ctrl-Space keybind for "Select previous input source".
+  home.activation.disableMacOSInputSourceHotkeys =
+    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      /usr/libexec/PlistBuddy \
+        -c "Set :AppleSymbolicHotKeys:60:enabled false" \
+        "$HOME/Library/Preferences/com.apple.symbolichotkeys.plist" || true
+
+      /usr/bin/killall cfprefsd || true
+    '';
+
   # Apply immediately when Home Manager switches, and again at login, since this
   # is not preserved across reboots.
   home.activation.keyMappings = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
