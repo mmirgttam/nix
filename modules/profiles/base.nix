@@ -17,6 +17,7 @@
     coreutils-prefixed
     dig
     fd
+    delta
     hexdump
     hexyl
     htop
