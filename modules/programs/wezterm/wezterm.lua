@@ -42,7 +42,7 @@ config.keys = {
   { key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
   { key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Next") },
 
-  -- Pane resizing
+  -- Pane navigation
   { key = "h", mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize({ "Left", 5 }) },
   { key = "j", mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize({ "Down", 5 }) },
   { key = "k", mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize({ "Up", 5 }) },
