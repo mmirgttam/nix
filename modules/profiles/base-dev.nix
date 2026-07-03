@@ -4,8 +4,10 @@
   ];
 
   home.packages = with pkgs; [
+    agent-browser
     bintools
     cmake
+    direnv
     gh
     glow
     lefthook
