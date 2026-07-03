@@ -10,6 +10,7 @@ config.color_scheme = "Catppuccin Frappe"
 config.hide_tab_bar_if_only_one_tab = true
 config.scrollback_lines = 10000
 config.warn_about_missing_glyphs = false
+config.check_for_updates = false
 
 config.inactive_pane_hsb = {
   saturation = 0.6,
