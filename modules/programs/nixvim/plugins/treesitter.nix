@@ -1,20 +1,21 @@
+{ pkgs, ... }:
 {
   plugins = {
     treesitter = {
       enable = true;
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        c
+        cpp
+        lua
+        markdown
+        markdown_inline
+        nix
+        python
+        query
+        vim
+        vimdoc
+      ];
       settings = {
-        ensure_installed = [
-          "c"
-          "cpp"
-          "lua"
-          "markdown"
-          "markdown_inline"
-          "nix"
-          "python"
-          "query"
-          "vim"
-          "vimdoc"
-        ];
         highlight.enable = true;
         indent.enable = true;
       };
