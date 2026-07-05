@@ -4,6 +4,7 @@
     ../programs/eza
     ../programs/fzf.nix
     ../programs/git.nix
+    ../programs/htop.nix
     ../programs/lazygit.nix
     ../programs/nixvim
     ../programs/starship.nix
@@ -20,7 +21,6 @@
     delta
     hexdump
     hexyl
-    htop
     hyperfine
     jq
     lsof
