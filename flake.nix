@@ -11,9 +11,11 @@
     };
 
     nixvim.url = "github:nix-community/nixvim";
+
+    workmux.url = "github:raine/workmux";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixgl, nixvim, ... }:
+  outputs = { self, nixpkgs, home-manager, nixgl, nixvim, workmux, ... }:
     let
       homeModules = {
         profiles = {
@@ -32,7 +34,7 @@
       mkHome = { system, homeDirectory, modules ? [ ] }:
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
-          extraSpecialArgs = { inherit nixgl; };
+          extraSpecialArgs = { inherit nixgl workmux; };
           modules = [
             nixvim.homeModules.nixvim
             ./home.nix

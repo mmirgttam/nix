@@ -21,6 +21,13 @@ config.window_frame = {
   font_size = 16.0,
 }
 
+-- For workmux: Connect to unix mux server on startup.
+-- This ensures WEZTERM_UNIX_SOCKET is consistent across all panes.
+config.default_gui_startup_args = { 'connect', 'unix' }
+
+-- For workmux: Configure unix_domains for the mux server.
+config.unix_domains = {{ name = 'unix' }}
+
 config.leader = { key = " ", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
   {

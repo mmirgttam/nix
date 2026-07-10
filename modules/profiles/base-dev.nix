@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }: {
+{ lib, pkgs, workmux, ... }: {
   imports = [
     ../programs/nodejs.nix
   ];
@@ -13,6 +13,7 @@
     lefthook
     ninja
     tree-sitter
+    workmux.packages.${pkgs.system}.default
   ] ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux (with pkgs; [
     heaptrack
     hotspot
