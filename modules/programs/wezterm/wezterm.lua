@@ -17,6 +17,10 @@ config.inactive_pane_hsb = {
   brightness = 0.9,
 }
 
+config.window_frame = {
+  font_size = 16.0,
+}
+
 config.leader = { key = " ", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
   {
