@@ -41,7 +41,10 @@
           modules = [
             nixvim.homeModules.nixvim
             ./home.nix
-            { home.homeDirectory = homeDirectory; }
+            {
+              home.homeDirectory = homeDirectory;
+              programs.nixvim.nixpkgs.source = nixpkgs;
+            }
           ] ++ modules;
         };
     in {
