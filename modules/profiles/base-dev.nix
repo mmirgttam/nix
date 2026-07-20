@@ -15,7 +15,7 @@
     lefthook
     ninja
     tree-sitter
-    workmux.packages.${pkgs.system}.default
+    workmux.packages.${pkgs.stdenv.hostPlatform.system}.default
   ] ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux (with pkgs; [
     heaptrack
     hotspot
