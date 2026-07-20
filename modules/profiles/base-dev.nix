@@ -3,6 +3,8 @@
     ../programs/nodejs.nix
   ];
 
+  programs.zsh.shellAliases.wmrm = "workmux remove";
+
   home.packages = with pkgs; [
     agent-browser
     bintools
