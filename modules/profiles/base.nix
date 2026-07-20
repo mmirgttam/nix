@@ -31,6 +31,7 @@
     ripgrep
     stylua
     tokei
+    which
     yazi
   ];
 }
