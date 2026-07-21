@@ -30,6 +30,7 @@
     procs
     ripgrep
     stylua
+    tmux
     tokei
     which
     yazi
