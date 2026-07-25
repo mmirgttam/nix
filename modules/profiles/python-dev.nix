@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    (python314.withPackages (ps: [
-      ps.python-lsp-black
+    (python313.withPackages (ps: [
+      ps.python-lsp-ruff
       ps.python-lsp-server
     ]))
     uv
@@ -10,9 +10,9 @@
   programs.nixvim.plugins.lsp.servers.pylsp = {
     enable = true;
     settings.plugins = {
-      black.enabled = true;
+      ruff.enabled = true;
       pycodestyle.enabled = false;
-      pyflakes.enabled = true;
+      pyflakes.enabled = false;
       yapf.enabled = false;
     };
   };

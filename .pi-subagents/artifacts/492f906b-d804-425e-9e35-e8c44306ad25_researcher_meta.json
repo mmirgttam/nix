@@ -1,0 +1,28 @@
+{
+  "runId": "492f906b-d804-425e-9e35-e8c44306ad25",
+  "agent": "researcher",
+  "task": "Research the current (2025-2026) Signal recovery path after signal-cli accidentally registered an existing primary phone number, logging out phone/desktop. Focus on official Signal support and signal-cli docs/issues. Determine whether deleting/unregistering signal-cli helps, what 'unregister' actually does, registration lock/PIN behavior, rate limits, and safest exact recovery steps. Return source links, distinguish verified facts from hypotheses, and do not request or expose private account data.\n\n---\n**Output:**\nWrite your findings to exactly this path: /home/matt/.config/home-manager/.pi-subagents/artifacts/outputs/492f906b-d804-425e-9e35-e8c44306ad25/research.md\nThis path is authoritative for this run.\nIgnore any other output filename or output path mentioned elsewhere, including output destinations in the base agent prompt, system prompt, or task instructions.\n\n## Acceptance Contract\nAcceptance level: attested\nCompletion is not accepted from prose alone. End with a structured acceptance report.\n\nCriteria:\n- criterion-1: Return concrete findings with file paths and severity when applicable\n\nRequired evidence: review-findings, residual-risks\n\nFinish with a fenced JSON block tagged `acceptance-report` in this shape:\nUse empty arrays when no items apply; array fields contain strings unless object entries are shown.\n```acceptance-report\n{\n  \"criteriaSatisfied\": [\n    {\n      \"id\": \"criterion-1\",\n      \"status\": \"satisfied\",\n      \"evidence\": \"specific proof\"\n    }\n  ],\n  \"changedFiles\": [\n    \"src/file.ts\"\n  ],\n  \"testsAddedOrUpdated\": [\n    \"test/file.test.ts\"\n  ],\n  \"commandsRun\": [\n    {\n      \"command\": \"command\",\n      \"result\": \"passed\",\n      \"summary\": \"short result\"\n    }\n  ],\n  \"validationOutput\": [\n    \"validation output or concise summary\"\n  ],\n  \"residualRisks\": [\n    \"none\"\n  ],\n  \"noStagedFiles\": true,\n  \"diffSummary\": \"short description of the diff\",\n  \"reviewFindings\": [\n    \"blocker: file.ts:12 - issue found, or no blockers\"\n  ],\n  \"manualNotes\": \"anything else the parent should know\"\n}\n```",
+  "exitCode": 0,
+  "model": "openai-codex/gpt-5.6-sol:medium",
+  "attemptedModels": [
+    "openai-codex/gpt-5.6-sol:medium"
+  ],
+  "modelAttempts": [
+    {
+      "model": "openai-codex/gpt-5.6-sol:medium",
+      "success": true,
+      "exitCode": 0,
+      "usage": {
+        "input": 8411,
+        "output": 5554,
+        "cacheRead": 9728,
+        "cacheWrite": 0,
+        "cost": 0.213539,
+        "turns": 4
+      }
+    }
+  ],
+  "transcriptPath": "/home/matt/.config/home-manager/.pi-subagents/artifacts/492f906b-d804-425e-9e35-e8c44306ad25_researcher_transcript.jsonl",
+  "skills": [],
+  "timestamp": 1783671400563
+}

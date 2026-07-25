@@ -22,6 +22,7 @@ in {
       vi = "nvim";
       vim = "nvim";
       hms = "home-manager switch --flake ~/.config/home-manager#${hm.switchConfiguration}";
+      hmsa = "home-manager switch --flake ~/.config/home-manager#${hm.switchConfiguration}-android";
     };
   };
 }

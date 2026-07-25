@@ -22,9 +22,10 @@
     let
       homeModules = {
         profiles = {
+          android = ./modules/profiles/android.nix;
           base = ./modules/profiles/base.nix;
-          desktop = ./modules/profiles/desktop.nix;
           base-dev = ./modules/profiles/base-dev.nix;
+          desktop = ./modules/profiles/desktop.nix;
           python-dev = ./modules/profiles/python-dev.nix;
         };
 
@@ -58,8 +59,8 @@
           modules = [
             homeModules.platforms.aarch64-darwin
             homeModules.profiles.base
-            homeModules.profiles.desktop
             homeModules.profiles.base-dev
+            homeModules.profiles.desktop
             homeModules.profiles.python-dev
           ];
         };
@@ -70,8 +71,21 @@
           modules = [
             homeModules.platforms.x86_64-linux
             homeModules.profiles.base
-            homeModules.profiles.desktop
             homeModules.profiles.base-dev
+            homeModules.profiles.desktop
+            homeModules.profiles.python-dev
+          ];
+        };
+
+        "matt-x86_64-linux-android" = mkHome {
+          system = "x86_64-linux";
+          homeDirectory = "/home/matt";
+          modules = [
+            homeModules.platforms.x86_64-linux
+            homeModules.profiles.android
+            homeModules.profiles.base
+            homeModules.profiles.base-dev
+            homeModules.profiles.desktop
             homeModules.profiles.python-dev
           ];
         };
@@ -83,6 +97,9 @@
 
         x86_64-linux."matt-x86_64-linux" =
           self.homeConfigurations."matt-x86_64-linux".activationPackage;
+
+        x86_64-linux."matt-x86_64-linux-android" =
+          self.homeConfigurations."matt-x86_64-linux-android".activationPackage;
       };
     };
 }
