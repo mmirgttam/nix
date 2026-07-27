@@ -44,7 +44,6 @@
             ./home.nix
             {
               home.homeDirectory = homeDirectory;
-              programs.nixvim.nixpkgs.source = nixpkgs;
             }
           ] ++ modules;
         };
