@@ -6,6 +6,8 @@ local config = wezterm.config_builder()
 config.font_dirs = { wezterm.home_dir .. "/.nix-profile/share/fonts" }
 config.font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Medium" })
 config.font_size = 14
+-- https://wezterm.org/config/font-shaping.html#advanced-font-shaping-options
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 config.color_scheme = "Catppuccin Frappe"
 config.hide_tab_bar_if_only_one_tab = true
 config.scrollback_lines = 10000
