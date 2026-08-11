@@ -18,6 +18,7 @@
     coreutils-prefixed
     dig
     fd
+    ffmpeg
     delta
     hexdump
     hexyl
