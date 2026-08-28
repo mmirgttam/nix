@@ -17,7 +17,9 @@
     ninja
     tree-sitter
     workmux.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ] ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux (with pkgs; [
+  ] ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin (with pkgs; [
+    terminal-notifier
+  ]) ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux (with pkgs; [
     heaptrack
     hotspot
     strace
