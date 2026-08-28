@@ -1,6 +1,7 @@
 { lib, pkgs, workmux, ... }: {
   imports = [
     ../programs/nodejs.nix
+    ../programs/pi.nix
   ];
 
   programs.zsh.shellAliases.wmrm = "workmux remove";
