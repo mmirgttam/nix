@@ -16,6 +16,8 @@
     lefthook
     ninja
     tree-sitter
+    wireshark
+    wireshark-cli
     workmux.packages.${pkgs.stdenv.hostPlatform.system}.default
   ] ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin (with pkgs; [
     terminal-notifier
