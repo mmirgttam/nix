@@ -13,6 +13,7 @@
     direnv
     gh
     glow
+    gnupg
     lefthook
     ninja
     tree-sitter
