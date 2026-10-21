@@ -1,13 +1,10 @@
-{ lib, pkgs, workmux, ... }: {
+{ lib, pkgs, ... }: {
   imports = [
     ../programs/nodejs.nix
     ../programs/pi.nix
   ];
 
-  programs.zsh.shellAliases.wmrm = "workmux remove";
-
   home.packages = with pkgs; [
-    agent-browser
     bintools
     cmake
     direnv
@@ -17,7 +14,6 @@
     lefthook
     ninja
     tree-sitter
-    workmux.packages.${pkgs.stdenv.hostPlatform.system}.default
   ] ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin (with pkgs; [
     terminal-notifier
   ]) ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux (with pkgs; [

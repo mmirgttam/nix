@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nodejs-nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixgl.url = "github:nix-community/nixGL";
 
     home-manager = {
@@ -15,10 +16,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    workmux.url = "github:raine/workmux";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixgl, nixvim, workmux, ... }:
+  outputs = { self, nixpkgs, nodejs-nixpkgs, home-manager, nixgl, nixvim, ... }:
     let
       homeModules = {
         profiles = {
@@ -38,7 +38,10 @@
       mkHome = { system, homeDirectory, modules ? [ ] }:
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
-          extraSpecialArgs = { inherit nixgl workmux; };
+          extraSpecialArgs = {
+            inherit nixgl;
+            nodejsPkgs = nodejs-nixpkgs.legacyPackages.${system};
+          };
           modules = [
             nixvim.homeModules.nixvim
             ./home.nix
