@@ -19,6 +19,19 @@ in {
     (n "<leader>yf" ":let @+ = expand('%')<cr>" "Copy relative path to current file")
     (n "<leader>yF" ":let @+ = expand('%:p')<cr>" "Copy absolute path to current file")
 
+    (map [ "n" "x" ] "<leader>yg" (lua ''
+      function()
+        Snacks.gitbrowse({
+          what = "permalink",
+          notify = false,
+          open = function(url)
+            vim.fn.setreg("+", url)
+            vim.notify("Copied permalink")
+          end,
+        })
+      end
+    '') "Copy GitHub permalink")
+
     # Move lines
     (n "<A-j>" ":m .+1<cr>==" "Move line down")
     (n "<A-k>" ":m .-2<cr>==" "Move line up")
