@@ -4,10 +4,10 @@
     enableZshIntegration = true;
 
     settings = {
-      git.pagers = [
+      git.diffRenderers = [
         {
           colorArg = "always";
-          pager = "delta --paging=never --syntax-theme='Catppuccin Frappe' --line-numbers --hunk-header-decoration-style=none --file-style='bold yellow'";
+          command = "delta --paging=never --syntax-theme='Catppuccin Frappe' --line-numbers --hunk-header-decoration-style=none --file-style='bold yellow'";
         }
       ];
     };
